@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "index": "Inicio"
+  },
+  "menu": {
+    "home": "Inicio",
+    "blocks": "Bloques",
+    "txs": "Transaccines"
+  },
+  "greeting": "Hello World"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "eiyaro-htmx-explorer",
+  "version": "1.0.0",
+  "description": "Eiyaro BlockChain explorer built on top of gofiber/htmx/tailwind/vite",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:standalone": "concurrently \"cross-env PUBLIC_DIR=static vite\" \"vite build --watch\" \"tailwindcss -i ./src/style.css -o ./static/style/global.css --watch\"",
+    "dev": "concurrently \"vite build --watch\" \"tailwindcss -i ./src/style.css -o ./static/style/global.css --watch\"",
+    "build": "vite build && tailwindcss -i ./src/style.css -o ./static/style/global.css"
+  },
+  "author": "Steven Jocol",
+  "license": "ISC",
+  "dependencies": {
+    "htmx.org": "^1.9.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "daisyui": "^4.11.1",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "^0.0.15",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.11"
+  }
+}

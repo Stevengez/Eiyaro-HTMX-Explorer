@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "index": "Home"
+  },
+  "menu": {
+    "home": "Home",
+    "blocks": "Blocks",
+    "txs": "Transactions"
+  },
+  "greeting": "Hello World"
+}
