@@ -12,11 +12,11 @@ export default defineConfig(({mode}) => {
                 name: "[name]",
                 fileName: "[name]",
             },
-            outDir: "static/lib",
+            outDir: "fs/static/lib",
             emptyOutDir: false
         },
         server: {
-            open: 'templates/index.html',
+            open: 'fs/templates/layout/global.html',
             port: 3000
         },
         publicDir: publicDirSrc

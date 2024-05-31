@@ -1,16 +1,16 @@
 package middleware
 
 import (
+	fs "eiyaro-htmx-explorer/fs"
 	"eiyaro-htmx-explorer/models"
 	"encoding/json"
-	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 func loadTranslations(lang string) (models.Translation, error) {
-	filename := "translations/" + lang + ".json"
-	file, err := os.ReadFile(filename)
+	filename := "locales/" + lang + ".json"
+	file, err := fs.LocalesFS.ReadFile(filename)
 	if err != nil {
 
 		// If not english then fallback with english

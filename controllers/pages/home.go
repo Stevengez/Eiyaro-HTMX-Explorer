@@ -1,4 +1,4 @@
-package web
+package pages
 
 import (
 	"eiyaro-htmx-explorer/models"
@@ -10,11 +10,11 @@ func GetHome(c *fiber.Ctx) error {
 	translation := c.Locals("lang").(models.Translation)
 
 	return c.Render(
-		"index",
+		"templates/index",
 		fiber.Map{
 			"Title": translation.M("pages").S("index"),
 			"lang":  translation,
 		},
-		"layout/global",
+		"templates/layout/global",
 	)
 }

@@ -2,7 +2,7 @@
 export default {
   content: [
     "./public/**/*.html",
-    "./templates/**/*.html"
+    "./fs/templates/**/*.html"
   ],
   theme: {
     extend: {},
