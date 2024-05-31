@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="eiyaro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/style/global.css" rel="stylesheet" />
+        <title>{{.Title}}</title>
+    </head>
+    <body>
+        <div class="drawer md:drawer-open">
+            <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+            <div class="drawer-content flex flex-col bg-base-100">
+            <!-- Top Navbar -->
+            <div class="w-full navbar bg-neutral">
+                <div class="flex-none md:hidden">
+                <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </label>
+                </div> 
+                <div class="flex-1 px-3 mx-3 text-xl font-normal text-neutral-content">
+                {{.Title}}
+                </div>
+            </div>
+            <div class="card card-bordered m-6 p-3 border-base-200 bg-neutral">
+                <!-- Page content here -->
+                {{embed}}
+            </div>
+            </div> 
+            <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
+            <div class="min-h-full w-60 bg-base-300">
+                <div class="drawer-navbar">
+                    <img src="/static/img/logo.png" width="100px"/>
+                    <div class="dropdown dropdown-end m-0">
+                        <div tabindex="0" role="button" class="btn p-0 w-7 min-w-7 h-7 min-h-7" hx-get="/langs" hx-trigger="click" hx-target="#langs-list" hx-swap="innerHTML" >EN</div>
+                        <ul id="langs-list" tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                          
+                        </ul>
+                      </div>
+                </div>
+                {{ template "templates/layout/menu/navbar" . }}
+            </div>
+            </div>
+        </div>
+    </body>
+    <script defer src="/static/lib/htmx.js"></script>
+    <script>
+        document.addEventListener('htmx:beforeRequest', (detail) => {
+            console.log("bReq:", detail)
+        })
+        document.addEventListener('htmx:afterRequest', (detail) => {
+            console.log("aReq:", detail)
+        })
+        document.addEventListener('htmx:targetError', (detail) => {
+            console.log("badSel:", detail)
+        })
+    </script>
+</html>
