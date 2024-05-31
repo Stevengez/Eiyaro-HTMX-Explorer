@@ -3,8 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"os"
 
+	fs "eiyaro-htmx-explorer/fs"
 	"eiyaro-htmx-explorer/models"
 	"eiyaro-htmx-explorer/routes"
 
@@ -42,7 +44,7 @@ func main() {
 	}
 
 	// Initialize Fiber Wrapper for HTML Template Engine
-	engine := html.New("./templates", ".html")
+	engine := html.NewFileSystem(http.FS(fs.TemplatesFS), ".html")
 
 	// Reaload template files on each render
 	enableReaload := os.Getenv("HOT_TEMPLATE_RELOAD")
