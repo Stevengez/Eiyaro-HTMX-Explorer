@@ -1,5 +1,6 @@
 {
   "name": "Español",
+  "shortName": "ES",
   "pages": {
     "index": "Inicio"
   },
@@ -8,5 +9,15 @@
     "blocks": "Bloques",
     "txs": "Transaccines"
   },
+
+  "labels": {
+    "lastBlock": "Ultimo Bloque",
+    "hashRate": "Hash Rate",
+    "difficulty": "Dificultad",
+    "pendingXfer": "Txns. Pendientes",
+    "minedCoins": "Monedas Minadas",
+    "supply": "Supply"
+  },
+
   "greeting": "Hello World"
 }

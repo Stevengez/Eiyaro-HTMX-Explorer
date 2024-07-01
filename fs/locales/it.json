@@ -1,0 +1,13 @@
+{
+    "name": "Italiano",
+    "shortName": "IT",
+    "pages": {
+      "index": "Inizio"
+    },
+    "menu": {
+      "home": "Inizio",
+      "blocks": "Block",
+      "txs": "Xfer"
+    },
+    "greeting": "Ciao Mondo!"
+  }

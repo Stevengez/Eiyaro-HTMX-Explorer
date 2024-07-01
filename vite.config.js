@@ -7,7 +7,10 @@ export default defineConfig(({mode}) => {
     return {
         build: {
             lib: {
-                entry: [resolve(__dirname, "src/htmx.js")],
+                entry: {
+                    htmx: resolve(__dirname, "src/htmx.js"),
+                    global: resolve(__dirname, "src/global.js")
+                },
                 formats: ["es"],
                 name: "[name]",
                 fileName: "[name]",

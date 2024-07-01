@@ -1,1 +1,113 @@
-<h1>{{.lang.greeting}}</h1>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-4">
+    
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                </svg>
+                {{.lang.labels.lastBlock}}
+            </div>
+            <div id="card-lastblock" hx-get="/summary/lastBlock" hx-trigger="load, every 10s" hx-swap="#card-lastblock" hx-swap="outerHTML">
+                <span class="loading loading-spinner loading-md"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                </svg>
+                {{.lang.labels.hashRate}}
+            </div>
+            <div id="card-hashrate" hx-get="/summary/hashRate" hx-trigger="load, every 10s" hx-swap="#card-hashrate" hx-swap="outerHTML">
+                {{.lang.labels.loading}}
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                </svg>
+                {{.lang.labels.difficulty}}
+            </div>
+            <div id="card-difficulty" hx-get="/summary/difficulty" hx-trigger="load, every 10s" hx-swap="#card-hashrate" hx-swap="outerHTML">
+                <span class="loading loading-spinner loading-md"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {{.lang.labels.pendingXfer}}
+            </div>
+            <div id="card-pendings" hx-get="/summary/pendings" hx-trigger="load, every 10s" hx-swap="#card-pendings" hx-swap="outerHTML">
+                <span class="loading loading-spinner loading-md"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {{.lang.labels.minedCoins}}
+            </div>
+            <div id="card-pendings" hx-get="/summary/pendings" hx-trigger="load, every 10s" hx-swap="#card-pendings" hx-swap="outerHTML">
+                <span class="loading loading-spinner loading-md"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card bg-neutral shadow-sm border-1">
+        <div class="card-body p-4">
+            <div class="card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {{.lang.labels.supply}}
+            </div>
+            <div>
+                2.1 {{.lang.amount.billion}} EY
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card bg-neutral shadow-sm border-1 mx-4 mb-4">
+    <div class="card-body p-4">
+        <div class="overflow-x-auto">
+            <table class="table" hx-get="summary/lastBlocks" hx-target="#table-lastblocks" hx-swap="outerHTML" hx-trigger="load, every 10s">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>{{.lang.labels.blockNumber}}</th>
+                  <th>{{.lang.labels.blockHash}}</th>
+                  <th>{{.lang.labels.blockTimestamp}}</th>
+                  <th class="hidden md:table-cell">{{.lang.labels.blockNonce}}</th>
+                  <th class="hidden lg:table-cell">{{.lang.labels.blockMiner}}</th>
+                  <th class="hidden lg:table-cell">{{.lang.labels.blockTxs}}</th>
+                </tr>
+              </thead>
+              <tbody id="table-lastblocks">
+                <tr>
+                  <th colspan="6" align="center">
+                    <span class="loading loading-spinner loading-md"></span>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div>

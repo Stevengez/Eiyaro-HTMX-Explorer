@@ -1,0 +1,3 @@
+[build]
+exclude_dir = ["node_modules"]
+exclude_file = ["package.json","package-lock.json"] 

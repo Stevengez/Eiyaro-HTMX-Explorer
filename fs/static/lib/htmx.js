@@ -1455,46 +1455,46 @@ var htmx_min = { exports: {} };
           var Cn = ee(gn, "formmethod");
           Cn != null && Cn.toLowerCase() !== "dialog" && (ze = Cn);
         }
-        var On = ne(Jr, "hx-confirm");
+        var Rn = ne(Jr, "hx-confirm");
         if (Yr === void 0) {
           var In = function(vn) {
             return he(ze, Qr, Jr, Zr, Gr, !!vn);
-          }, Tn = { target: nn, elt: Jr, path: Qr, verb: ze, triggeringEvent: Zr, etc: Gr, issueRequest: In, question: On };
-          if (ce(Jr, "htmx:confirm", Tn) === !1)
+          }, On = { target: nn, elt: Jr, path: Qr, verb: ze, triggeringEvent: Zr, etc: Gr, issueRequest: In, question: Rn };
+          if (ce(Jr, "htmx:confirm", On) === !1)
             return ie(Wr), en;
         }
-        var Sn = Jr, pn = ne(Jr, "hx-sync"), mn = null, Fn = !1;
-        if (pn) {
-          var hn = pn.split(":"), un = hn[0].trim();
-          if (un === "this" ? Sn = xe(Jr, "hx-sync") : Sn = ue(Jr, un), pn = (hn[1] || "drop").trim(), on = ae(Sn), pn === "drop" && on.xhr && on.abortable !== !0)
+        var Sn = Jr, mn = ne(Jr, "hx-sync"), pn = null, Fn = !1;
+        if (mn) {
+          var hn = mn.split(":"), un = hn[0].trim();
+          if (un === "this" ? Sn = xe(Jr, "hx-sync") : Sn = ue(Jr, un), mn = (hn[1] || "drop").trim(), on = ae(Sn), mn === "drop" && on.xhr && on.abortable !== !0)
             return ie(Wr), en;
-          if (pn === "abort") {
+          if (mn === "abort") {
             if (on.xhr)
               return ie(Wr), en;
             Fn = !0;
-          } else if (pn === "replace")
+          } else if (mn === "replace")
             ce(Sn, "htmx:abort");
-          else if (pn.indexOf("queue") === 0) {
-            var Ln = pn.split(" ");
-            mn = (Ln[1] || "last").trim();
+          else if (mn.indexOf("queue") === 0) {
+            var Ln = mn.split(" ");
+            pn = (Ln[1] || "last").trim();
           }
         }
         if (on.xhr)
           if (on.abortable)
             ce(Sn, "htmx:abort");
           else {
-            if (mn == null) {
+            if (pn == null) {
               if (Zr) {
                 var fn = ae(Zr);
-                fn && fn.triggerSpec && fn.triggerSpec.queue && (mn = fn.triggerSpec.queue);
+                fn && fn.triggerSpec && fn.triggerSpec.queue && (pn = fn.triggerSpec.queue);
               }
-              mn == null && (mn = "last");
+              pn == null && (pn = "last");
             }
-            return on.queuedRequests == null && (on.queuedRequests = []), mn === "first" && on.queuedRequests.length === 0 ? on.queuedRequests.push(function() {
+            return on.queuedRequests == null && (on.queuedRequests = []), pn === "first" && on.queuedRequests.length === 0 ? on.queuedRequests.push(function() {
               he(ze, Qr, Jr, Zr, Gr);
-            }) : mn === "all" ? on.queuedRequests.push(function() {
+            }) : pn === "all" ? on.queuedRequests.push(function() {
               he(ze, Qr, Jr, Zr, Gr);
-            }) : mn === "last" && (on.queuedRequests = [], on.queuedRequests.push(function() {
+            }) : pn === "last" && (on.queuedRequests = [], on.queuedRequests.push(function() {
               he(ze, Qr, Jr, Zr, Gr);
             })), ie(Wr), en;
           }
@@ -1507,13 +1507,13 @@ var htmx_min = { exports: {} };
           }
         }, An = ne(Jr, "hx-prompt");
         if (An) {
-          var Rn = prompt(An);
-          if (Rn === null || !ce(Jr, "htmx:prompt", { prompt: Rn, target: nn }))
+          var Tn = prompt(An);
+          if (Tn === null || !ce(Jr, "htmx:prompt", { prompt: Tn, target: nn }))
             return ie(Wr), dn(), en;
         }
-        if (On && !Yr && !confirm(On))
+        if (Rn && !Yr && !confirm(Rn))
           return ie(Wr), dn(), en;
-        var sn = xr(Jr, nn, Rn);
+        var sn = xr(Jr, nn, Tn);
         ze !== "get" && !Sr(Jr) && (sn["Content-Type"] = "application/x-www-form-urlencoded"), Gr.headers && (sn = le(sn, Gr.headers));
         var Nn = dr(Jr, ze), En = Nn.errors, yn = Nn.values;
         Gr.values && (yn = le(yn, Gr.values));
@@ -1613,7 +1613,7 @@ var htmx_min = { exports: {} };
               O(Jr, /HX-Reswap:/i) && (Cn = Jr.getResponseHeader("HX-Reswap"));
               var Kr = wr(ze, Cn);
               Kr.hasOwnProperty("ignoreTitle") && (gn = Kr.ignoreTitle), Zr.classList.add(Q.config.swappingClass);
-              var On = null, In = null, Tn = function() {
+              var Rn = null, In = null, On = function() {
                 try {
                   var hn = document.activeElement, un = {};
                   try {
@@ -1640,7 +1640,7 @@ var htmx_min = { exports: {} };
                     var An = ze;
                     se(ze) || (An = re().body), _e(Jr, "HX-Trigger-After-Swap", An);
                   }
-                  var Rn = function() {
+                  var Tn = function() {
                     if (oe(fn.tasks, function(yn) {
                       yn.call();
                     }), oe(fn.elts, function(yn) {
@@ -1657,24 +1657,24 @@ var htmx_min = { exports: {} };
                       var En = ze;
                       se(ze) || (En = re().body), _e(Jr, "HX-Trigger-After-Settle", En);
                     }
-                    ie(On);
+                    ie(Rn);
                   };
-                  Kr.settleDelay > 0 ? setTimeout(Rn, Kr.settleDelay) : Rn();
+                  Kr.settleDelay > 0 ? setTimeout(Tn, Kr.settleDelay) : Tn();
                 } catch (sn) {
                   throw fe(ze, "htmx:swapError", Qr), ie(In), sn;
                 }
               }, Sn = Q.config.globalViewTransitions;
               if (Kr.hasOwnProperty("transition") && (Sn = Kr.transition), Sn && ce(ze, "htmx:beforeTransition", Qr) && typeof Promise < "u" && document.startViewTransition) {
-                var pn = new Promise(function(hn, un) {
-                  On = hn, In = un;
-                }), mn = Tn;
-                Tn = function() {
+                var mn = new Promise(function(hn, un) {
+                  Rn = hn, In = un;
+                }), pn = On;
+                On = function() {
                   document.startViewTransition(function() {
-                    return mn(), pn;
+                    return pn(), mn;
                   });
                 };
               }
-              Kr.swapDelay > 0 ? setTimeout(Tn, Kr.swapDelay) : Tn();
+              Kr.swapDelay > 0 ? setTimeout(On, Kr.swapDelay) : On();
             }
             on && fe(ze, "htmx:responseError", le({ error: "Response Status Error Code " + Jr.status + " from " + Qr.pathInfo.requestPath }, Qr));
           }
@@ -1760,3 +1760,12 @@ var htmx_min = { exports: {} };
 var htmx_minExports = htmx_min.exports;
 const htmx = /* @__PURE__ */ getDefaultExportFromCjs(htmx_minExports);
 window.htmx = htmx;
+document.addEventListener("htmx:beforeRequest", (ze) => {
+  console.log("bReq:", ze);
+});
+document.addEventListener("htmx:afterRequest", (ze) => {
+  console.log("aReq:", ze);
+});
+document.addEventListener("htmx:targetError", (ze) => {
+  console.log("badSel:", ze);
+});

@@ -1,0 +1,5 @@
+<div id="{{.id}}" hx-get="/summary/{{.getPath}}" hx-trigger="load delay:10s" hx-swap="#{{.id}}" hx-swap="outerHTML">
+    <p class="text-lg font-normal">
+        {{.value}}
+    </p>
+</div>

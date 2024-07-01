@@ -1,5 +1,6 @@
 {
   "name": "English",
+  "shortName": "EN",
   "pages": {
     "index": "Home"
   },
@@ -8,5 +9,28 @@
     "blocks": "Blocks",
     "txs": "Transactions"
   },
+
+  "labels": {
+    "lastBlock": "Last Block",
+    "hashRate": "Hash Rate",
+    "difficulty": "Difficulty",
+    "pendingXfer": "Pending Transactions",
+    "minedCoins": "Coins Mined",
+    "supply": "Supply",
+
+    "blockNumber":"Number",
+    "blockHash": "Hash",
+    "blockTimestamp": "Timestamp",
+    "blockNonce": "Nonce",
+    "blockMiner": "Miner",
+    "blockTxs": "Txs"
+  },
+
+  "amount":{
+    "hundred": "Hundred",
+    "thousand": "Thousand",
+    "billion": "Billion"
+  },
+
   "greeting": "Hello World"
 }

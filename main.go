@@ -9,6 +9,7 @@ import (
 	fs "eiyaro-htmx-explorer/fs"
 	"eiyaro-htmx-explorer/models"
 	"eiyaro-htmx-explorer/routes"
+	"eiyaro-htmx-explorer/service/template"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -45,6 +46,7 @@ func main() {
 
 	// Initialize Fiber Wrapper for HTML Template Engine
 	engine := html.NewFileSystem(http.FS(fs.TemplatesFS), ".html")
+	engine.AddFunc("shorter", template.Shorter)
 
 	// Reaload template files on each render
 	enableReaload := os.Getenv("HOT_TEMPLATE_RELOAD")
