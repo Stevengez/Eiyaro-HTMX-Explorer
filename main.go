@@ -47,6 +47,7 @@ func main() {
 	// Initialize Fiber Wrapper for HTML Template Engine
 	engine := html.NewFileSystem(http.FS(fs.TemplatesFS), ".html")
 	engine.AddFunc("shorter", template.Shorter)
+	engine.AddFunc("unixToUtcDate", template.UnixToDate)
 
 	// Reaload template files on each render
 	enableReaload := os.Getenv("HOT_TEMPLATE_RELOAD")
