@@ -1,6 +1,6 @@
 {
   "name": "English",
-  "shortName": "EN",
+  "shortName": "en",
   "pages": {
     "index": "Home"
   },
@@ -11,6 +11,7 @@
   },
 
   "labels": {
+    "block": "Block",
     "lastBlock": "Last Block",
     "hashRate": "Hash Rate",
     "difficulty": "Difficulty",
@@ -19,11 +20,18 @@
     "supply": "Supply",
 
     "blockNumber":"Number",
-    "blockHash": "Hash",
-    "blockTimestamp": "Timestamp",
-    "blockNonce": "Nonce",
     "blockMiner": "Miner",
-    "blockTxs": "Txs"
+    "blockTxs": "Txs",
+
+    "hash": "Hash",
+    "size": "Size",
+    "version": "Version",
+    "previousHash": "Previous Block Hash",
+    "timestamp": "Timestamp",
+    "nonce": "Nonce",
+    "bits": "Bits",
+    "txMerkleRoot": "Tx. Merkle Root",
+    "txStatusHash": "Tx. Status Hash"
   },
 
   "amount":{

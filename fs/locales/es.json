@@ -1,6 +1,6 @@
 {
   "name": "Español",
-  "shortName": "ES",
+  "shortName": "es",
   "pages": {
     "index": "Inicio"
   },
@@ -11,6 +11,7 @@
   },
 
   "labels": {
+    "block": "Bloque",
     "lastBlock": "Ultimo Bloque",
     "hashRate": "Hash Rate",
     "difficulty": "Dificultad",
