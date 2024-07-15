@@ -1,10 +1,9 @@
 package routes
 
 import (
-	pagesControllers "eiyaro-htmx-explorer/controllers/pages"
-	webControllers "eiyaro-htmx-explorer/controllers/web"
 	fs "eiyaro-htmx-explorer/fs"
-	middleware "eiyaro-htmx-explorer/middlewares/translation"
+	componentRoutes "eiyaro-htmx-explorer/routes/components"
+	pageRoutes "eiyaro-htmx-explorer/routes/pages"
 
 	"net/http"
 
@@ -21,20 +20,6 @@ func SetRoutes(app *fiber.App) {
 		Browse:     false,
 	}))
 
-	// all other dynamic calls
-	app.Get("/langs", webControllers.GetLangs)
-
-	// all other dynamic calls
-	app.Get("/summary/lastblock", webControllers.GetLastBlock)
-	app.Get("/summary/lastBlocks", webControllers.GetLastBlocks)
-	app.Get("/summary/hashRate", webControllers.GetHashRate)
-	app.Get("/summary/difficulty", webControllers.GetDifficulty)
-	app.Get("/summary/pendings", webControllers.GetPendingCount)
-
-	// BasePath for the lang selection
-	langBaseRoute := app.Group("/:lang", middleware.Translation)
-
-	// All Content Routes
-	langBaseRoute.Get("/", pagesControllers.GetHome)
-
+	componentRoutes.SetComponentsRoutes(app)
+	pageRoutes.SetPagesRoutes(app)
 }

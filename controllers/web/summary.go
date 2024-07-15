@@ -23,6 +23,7 @@ func GetLastBlock(c *fiber.Ctx) error {
 
 func GetLastBlocks(c *fiber.Ctx) error {
 
+	linkPrefix := c.Query("prefix", "en")
 	lastBlock, err := node.GetLastBlock()
 
 	if err != nil {
@@ -40,7 +41,8 @@ func GetLastBlocks(c *fiber.Ctx) error {
 	return c.Render(
 		"templates/layout/misc/tables/blockrow",
 		fiber.Map{
-			"blocks": blocks,
+			"linkPrefix": linkPrefix,
+			"blocks":     blocks,
 		},
 	)
 }
