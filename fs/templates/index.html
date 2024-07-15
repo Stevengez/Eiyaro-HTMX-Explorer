@@ -88,14 +88,14 @@
 <div class="card bg-neutral shadow-sm border-1 mx-4 mb-4">
     <div class="card-body p-4">
         <div class="overflow-x-auto">
-            <table class="table" hx-get="summary/lastBlocks" hx-target="#table-lastblocks" hx-swap="outerHTML" hx-trigger="load, every 10s">
+            <table class="table" hx-get="/summary/lastBlocks?prefix={{.lang.shortName}}" hx-target="#table-lastblocks" hx-swap="outerHTML" hx-trigger="load, every 10s">
               <!-- head -->
               <thead>
                 <tr>
                   <th>{{.lang.labels.blockNumber}}</th>
-                  <th>{{.lang.labels.blockHash}}</th>
-                  <th>{{.lang.labels.blockTimestamp}}</th>
-                  <th class="hidden md:table-cell">{{.lang.labels.blockNonce}}</th>
+                  <th>{{.lang.labels.hash}}</th>
+                  <th>{{.lang.labels.timestamp}}</th>
+                  <th class="hidden md:table-cell">{{.lang.labels.nonce}}</th>
                   <th class="hidden lg:table-cell">{{.lang.labels.blockMiner}}</th>
                   <th class="hidden lg:table-cell">{{.lang.labels.blockTxs}}</th>
                 </tr>

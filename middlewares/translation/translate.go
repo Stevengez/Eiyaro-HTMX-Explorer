@@ -33,15 +33,17 @@ func loadTranslations(lang string) (models.Translation, error) {
 // Middleware to load the translation
 func Translation(c *fiber.Ctx) error {
 	// Get language and fallbacks to "en"
-	lang := c.Params("lang")
-	if lang == "" {
-		lang = "en"
+	paramLang := c.Params("lang")
+	if paramLang == "" {
+		paramLang = "en"
 	}
 
-	translations, err := loadTranslations(lang)
+	translations, err := loadTranslations(paramLang)
 	if err != nil {
 		return err
 	}
+
+	c.Locals("langPrefix", paramLang)
 	c.Locals("lang", translations)
 	return c.Next()
 }
